@@ -1,4 +1,7 @@
 #include "JsonService.h"
+#include <fstream>
+
+
 
 Weather JsonService::getWeather(std::string s) {
     std::ifstream fin(s);
@@ -6,7 +9,8 @@ Weather JsonService::getWeather(std::string s) {
         throw std::exception("error");
 
     json j;
-    j = json::parse(fin);
+    fin >> j;
+    //j = json::parse(fin);
     std::string city = j["name"];
     double lon = j["coord"]["lon"]; 
     double lat = j["coord"]["lat"];   
