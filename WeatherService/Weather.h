@@ -52,5 +52,7 @@ public:
 		cout << "Скорость ветра: " << this->getWindSpeed() << endl;
 		cout << "Облачность: " << this->getClouds() << endl;
 	}
+
+	~Weather();
 };
 
